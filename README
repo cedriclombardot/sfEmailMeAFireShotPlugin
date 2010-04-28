@@ -1,0 +1,42 @@
+# sfEmailMeAFireShotPlugin 
+
+A real client, frequently doesn't know how to do a screenshot, with this plugin, 
+if your clients are one FireFox and on Windows they could eaysily report you a bug
+
+## Requirements
+
+  * JQuery
+ 
+## Installation
+
+First of all the app.yml
+
+You've to configure the apiKeys like that :
+
+    all:
+      sfEmailMeAFireShot:
+        apiKey: #http://screenshot-program.com/fireshot/api_key.php
+          DOMAINE: KEY_GENERATED
+    
+
+Create the link :
+
+    
+    use_helper('sfEmailMeAFireShot');
+	include_sfEmailMeAFireShot_js();
+	echo link_sfEmailMeAFireShot('<span class="ui-icon ui-icon-image"></span>Report a bug','edit',array('class'=>'btn ui-state-default ui-corner-all '));
+	
+
+## Documentation for  link_sfEmailMeAFireShot
+
+*link_sfEmailMeAFireShot($name_for_link,$mode="edit",$options=array());*
+
+  * name_for_link : The title of the link
+  * mode : **edit** to open fireshot editor or **email** to send an email  
+  * options : array for the link tag
+
+## How it works
+
+  1. If fireshot is not installed, the link will be replaced by a download link to install the extensions
+  2. If you're not on Win or Firefox the link will be hidden
+  3. Else the action will be done
