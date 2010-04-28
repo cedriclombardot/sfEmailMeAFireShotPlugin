@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfEmailMeAFireShotPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>A real client, frequently doesn't know how to do a screenshot, with this plugin, 
+if your clients are on FireFox and on Windows they could eaysily report you a bug</summary>
+ <description>A real client, frequently doesn't know how to do a screenshot, with this plugin, 
+if your clients are on FireFox and on Windows they could eaysily report you a bug</description>
+ <lead>
+  <name>Cedric Lombardot</name>
+  <user>lombardot</user>
+  <email>cedric.lombardot@spyrit.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-04-28</date>
+ <version>
+   <release>0.9.0</release>
+   <api>0.9.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+<license uri="http://www.symfony-project.com/license">MIT</license>
+ <notes>-</notes>
+ <contents><dir name="/"><dir name="config"><file name="app.yml" role="data"/></dir><dir name="lib"><dir name="form"><file name="sfEmailMeAFireShotEmailForm.php" role="data"/></dir><dir name="helper"><file name="sfEmailMeAFireShotHelper.php" role="data"/></dir></dir><file name="LICENSE" role="data"/><file name="README" role="data"/><dir name="web"><dir name="js"><file name="fsapi.js" role="data"/></dir></dir></dir></contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.2.0</min>
+    <max>1.5.0</max>
+    <exclude>1.5.0</exclude>
+   </package>
+  </required>
+ </dependencies>
+
+ <phprelease>
+ </phprelease>
+
+ <changelog>
+ <release><version><release>0.9.0</release><api>0.9.0</api></version><stability><release>stable</release><api>stable</api></stability><license uri="http://www.symfony-project.com/license">MIT</license><date>2010-04-28</date><notes>Initial release</notes></release></changelog>
+</package>
