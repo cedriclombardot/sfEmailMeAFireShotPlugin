@@ -1,6 +1,6 @@
 <?php
 
-function link_sfEmailMeAFireShot($content,$action="email"){
+function link_sfEmailMeAFireShot($content,$action="edit"){
 	return content_tag('span',
 		content_tag('a',$content,array('onclick'=>'shotAnd("'.$action.'"); return false;','href'=>'#')),
 	array('id'=>'sfEmailMeAFireShot'));
@@ -25,7 +25,8 @@ function include_sfEmailMeAFireShot_js(){
 		if (typeof(FireShotAPI) != "undefined" && FireShotAPI.isAvailable()){
 			if(action=="email")
 				FireShotAPI.emailPage(true);
-						
+			if(action=="edit")
+				FireShotAPI.editPage(true);			
 			
 		}else{
 			$("#sfEmailMeAFireShot").html( "<b>Not installed</b>, " + 
