@@ -1,8 +1,9 @@
 <?php
 
-function link_sfEmailMeAFireShot($content,$action="edit"){
+function link_sfEmailMeAFireShot($content,$action="edit",$options=array()){
+	$options=array_merge($options,array('onclick'=>'shotAnd("'.$action.'"); return false;','href'=>'#'));
 	return content_tag('span',
-		content_tag('a',$content,array('onclick'=>'shotAnd("'.$action.'"); return false;','href'=>'#')),
+		content_tag('a',$content,$options),
 	array('id'=>'sfEmailMeAFireShot'));
 	
 }
