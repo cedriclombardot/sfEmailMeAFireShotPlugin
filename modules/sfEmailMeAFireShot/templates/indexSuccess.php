@@ -4,10 +4,6 @@
     <?php echo $form ?>
     <tr>
       <th></th>
-      <td><img src="data:image/png;base64,<?php echo $sf_user->getAttribute('sfEmailMeAFireShot_base64') ?>" height="100" alt="capture" /></td>
-    </tr>
-    <tr>
-      <th></th>
       <td><input type="submit" value="Send" /></td>
     </tr>
   </table>

@@ -315,6 +315,7 @@
 	
 	// Get extra settings in rel attribute
 	function getRelSettings(elt){
+	alert(elt);
 		return elt._relSettings.match(/([^\[\]]+)/g);
 	};
 	
