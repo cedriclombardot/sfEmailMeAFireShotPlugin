@@ -14,17 +14,18 @@ var cFSEMail = 3;
 var cFSExternal = 4;
 var cFSUpload = 5;
 var cFSPrint = 7;
+var cBASE64Encode = 8;
 
 var FireShotAPI =
 {
 	Key : "",  				// This key should be set up before using the API
 	AutoInstall: true,      // Set this variable to false to switch off addon auto-installation
-	
+
 	// Check silently whether the addon is available at the client's PC, returns *true* if everything is OK. Otherwise returns *false*.
 	isAvailable : function()
 	{
 		if (!this.isWindows() || !this.isFirefox()) return false;
-		
+
 		var element = document.createElement("FireShotDataElement");
 		element.setAttribute("FSAvailable", false);
 		document.documentElement.appendChild(element);
@@ -36,23 +37,23 @@ var FireShotAPI =
 
 		return element.getAttribute("FSAvailable") == "true";
 	},
-	
+
 	// Installs plugin
 	installPlugin : function()
 	{
 		if (!this.isWindows() || !this.isFirefox())
 		{
 			this.errorOnlyFirefoxAtWindows();
-			return;	
+			return;
 		}
 		else
 		{
 			var xpi = new Object();
    			xpi['FireShot'] = "http://screenshot-program.com/fireshot.xpi";
-   			InstallTrigger.install(xpi, FireShotAPI.installationDone);	
+   			InstallTrigger.install(xpi, FireShotAPI.installationDone);
 		}
 	},
-	
+
 	// Callback function seems to be not working properly
 	installationDone : function(name, result)
 	{
@@ -71,17 +72,21 @@ var FireShotAPI =
 			this.installPlugin();
 			return;
 		}
-		
+
 		var element = document.createElement("FireShotDataElement");
 		element.setAttribute("Entire", EntirePage);
 		element.setAttribute("Action", Action);
 		element.setAttribute("Key", Key);
+		element.setAttribute("BASE64Content", "");
+
 		document.documentElement.appendChild(element);
 
 		var evt = document.createEvent("Events");
 		evt.initEvent("capturePageEvt", true, false);
 
 		element.dispatchEvent(evt);
+
+		return element;
 	},
 
 	// Capture web page (Entire = true for capturing the web page entirely) and *edit*
@@ -95,7 +100,7 @@ var FireShotAPI =
 	{
 		this.capturePage(Entire, cFSSave, this.Key);
 	},
-	
+
 	// Capture web page and *copy to clipboard*
 	copyPage : function(Entire)
 	{
@@ -126,6 +131,12 @@ var FireShotAPI =
 		this.capturePage(Entire, cFSPrint, this.Key);
 	},
 
+   // Capture web page and *print*
+	base64EncodePage : function(Entire)
+	{
+		return this.capturePage(Entire, cBASE64Encode, this.Key).getAttribute("BASE64Content");
+	},
+
 	// Check whether the addon is available and display the message if required
 	checkAvailability : function()
 	{
@@ -135,29 +146,29 @@ var FireShotAPI =
 			this.errorOnlyFirefoxAtWindows();
 			return;
 		}
-		
+
 		if (!this.isAvailable() && confirm("FireShot plugin for Firefox not found. Would you like to install it?"))
 			this.installPlugin();
 	},
-	
+
 	// Check whether current OS is Windows
 	isWindows : function()
 	{
-		return navigator.appVersion.indexOf("Win") != -1;	
+		return navigator.appVersion.indexOf("Win") != -1;
 	},
-	
+
 	// Check whether current browser is Firefox
 	isFirefox : function()
 	{
 		return navigator.userAgent.indexOf("Firefox") != -1;
 	},
-	
+
 	// Displays error message
 	errorOnlyFirefoxAtWindows : function()
 	{
-		alert("Sorry, this plugin works only in Firefox under Windows OS.");	
+		alert("Sorry, this plugin works only in Firefox under Windows OS.");
 	}
-	
-	
-	
+
+
+
 }

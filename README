@@ -17,6 +17,8 @@ You've to configure the apiKeys like that :
       sfEmailMeAFireShot:
         apiKey: #http://screenshot-program.com/fireshot/api_key.php
           DOMAINE: KEY_GENERATED
+        email_to: AN_email # Il you want to use form mode
+        email_from: #See form mode
     
 
 Create the link :
@@ -24,7 +26,7 @@ Create the link :
     
     use_helper('sfEmailMeAFireShot');
 	include_sfEmailMeAFireShot_js();
-	echo link_sfEmailMeAFireShot('<span class="ui-icon ui-icon-image"></span>Report a bug','edit',array('class'=>'btn ui-state-default ui-corner-all '));
+	echo link_sfEmailMeAFireShot('<span class="ui-icon ui-icon-image"></span>Report a bug','form',array('class'=>'btn ui-state-default ui-corner-all '));
 	
 
 ## Documentation for  link_sfEmailMeAFireShot
@@ -32,11 +34,27 @@ Create the link :
 *link_sfEmailMeAFireShot($name_for_link,$mode="edit",$options=array());*
 
   * name_for_link : The title of the link
-  * mode : **edit** to open fireshot editor or **email** to send an email  
+  * mode : **edit** to open fireshot editor or **email** to send an email  or  **form** see after
   * options : array for the link tag
+
+## Form mode
+
+The form mode will go to open an Jquery Superbox to help you to send and email with the capture attached in the mail
+
+You could define email_to for the mail recipient (eg : the api that will insert your bug into Redmine or mantis)
+
+The email from is set to :
+
+  * myUser::getMail() if defined
+  * email_to if defined
+  * or email_from
+
 
 ## How it works
 
   1. If fireshot is not installed, the link will be replaced by a download link to install the extensions
   2. If you're not on Win or Firefox the link will be hidden
   3. Else the action will be done
+  
+  
+  

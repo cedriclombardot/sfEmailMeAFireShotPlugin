@@ -1,0 +1,1 @@
+<?php echo __("You're email was successfully sent",array(),'email_me_fireshot') ?>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+  <file original="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit>
+        <source>Subject</source>
+        <target>Sujet</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Content</source>
+        <target>Contenu</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You're email was successfully sent</source>
+        <target>Votre e-mail à bien été envoyé</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Report a bug</source>
+        <target>Rapporter un bug</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
