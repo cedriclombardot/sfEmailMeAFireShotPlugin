@@ -12,7 +12,7 @@ class sfEmailMeAFireShotActions extends sfActions{
 	     
 			if($this->form->isValid()){
 				$mailer=$this->getMailer();
-				$attach=new Swift_Attachment(base64_decode($this->form->getValue('capture')),'sfEmailMeAFireShot '.date('Y-m-d h:i:s').'.png','image/png');
+				$attach=new Swift_Attachment(base64_decode($this->getUser()->getAttribute('sfEmailMeAFireShot_base64')),'sfEmailMeAFireShot '.date('Y-m-d h:i:s').'.png','image/png');
 				if(method_exists($this->getUser(),'getMail')){
 					$from=$this->getUser()->getMail();
 					if($from=='')
