@@ -12,18 +12,18 @@ if your clients are on FireFox and on Windows they could eaysily report you a bu
   <email>cedric.lombardot@spyrit.net</email>
   <active>yes</active>
  </lead>
- <date>2010-04-28</date>
+ <date>2010-05-25</date>
  <version>
-   <release>0.9.0</release>
-   <api>0.9.0</api>
+   <release>0.9.1</release>
+   <api>0.9.1</api>
  </version>
  <stability>
-  <release>stable</release>
-  <api>stable</api>
+  <release>beta</release>
+  <api>beta</api>
  </stability>
 <license uri="http://www.symfony-project.com/license">MIT</license>
  <notes>-</notes>
- <contents><dir name="/"><dir name="config"><file name="app.yml" role="data"/></dir><dir name="lib"><dir name="form"><file name="sfEmailMeAFireShotEmailForm.php" role="data"/></dir><dir name="helper"><file name="sfEmailMeAFireShotHelper.php" role="data"/></dir></dir><file name="LICENSE" role="data"/><file name="README" role="data"/><dir name="web"><dir name="js"><file name="fsapi.js" role="data"/></dir></dir></dir></contents>
+ <contents><dir name="/"><dir name="config"><file name="app.yml" role="data"/></dir><dir name="i18n"><file name="email_me_fireshot.fr.xml" role="data"/></dir><dir name="lib"><dir name="form"><file name="sfEmailMeAFireShotEmailForm.php" role="data"/></dir><dir name="helper"><file name="sfEmailMeAFireShotHelper.php" role="data"/></dir></dir><file name="LICENSE" role="data"/><dir name="modules"><dir name="sfEmailMeAFireShot"><dir name="actions"><file name="actions.class.php" role="data"/></dir><dir name="templates"><file name="emailOkSuccess.php" role="data"/><file name="indexSuccess.php" role="data"/></dir></dir></dir><file name="README" role="data"/><dir name="web"><dir name="css"><file name="jquery.superbox.css" role="data"/></dir><dir name="images"><file name="loader.gif" role="data"/></dir><dir name="js"><file name="fsapi.js" role="data"/><file name="jquery.superbox-min.js" role="data"/><file name="jquery.superbox.js" role="data"/></dir></dir></dir></contents>
  <dependencies>
   <required>
    <php>
@@ -46,5 +46,6 @@ if your clients are on FireFox and on Windows they could eaysily report you a bu
  </phprelease>
 
  <changelog>
- <release><version><release>0.9.0</release><api>0.9.0</api></version><stability><release>stable</release><api>stable</api></stability><license uri="http://www.symfony-project.com/license">MIT</license><date>2010-04-28</date><notes>Initial release</notes></release></changelog>
+ <release><version><release>0.9.0</release><api>0.9.0</api></version><stability><release>stable</release><api>stable</api></stability><license uri="http://www.symfony-project.com/license">MIT</license><date>2010-04-28</date><notes>Initial release</notes></release>
+ <release><version><release>0.9.1</release><api>0.9.1</api></version><stability><release/><api/></stability><license uri="http://www.symfony-project.com/license">MIT</license><date>2010-05-25</date><notes>Adding form in modal box with Fireshot 0.84 beta</notes></release></changelog>
 </package>
