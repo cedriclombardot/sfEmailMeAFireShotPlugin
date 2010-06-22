@@ -4,7 +4,7 @@ function link_sfEmailMeAFireShot($content,$action="edit",$options=array()){
 	$options=array_merge($options,array('onclick'=>'shotAnd("'.$action.'"); return false;','href'=>'#'));
 	if($action=='form'){
 		$options['rel']='superbox[iframe]';
-		$options['href']=url_for('sfEmailMeAFireShot/index');
+		$options['href']=url_for('@sf_email_me_a_fireshot');
 	}
 	return content_tag('span',
 		content_tag('a',$content,$options),
