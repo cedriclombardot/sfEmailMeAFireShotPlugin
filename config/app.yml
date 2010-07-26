@@ -1,7 +1,7 @@
 all:
   sfEmailMeAFireShot:
     apiKey: #http://screenshot-program.com/fireshot/api_key.php
-      localhost: GO361F03J00G071A6ICIJVC629E0IG86JBO0NKTU
+      localhost: U80Q18O2TG3C03PB82FEJOK7CPD0IG86JBO0NK5V
     email_to: "cedric.lombardot@spyrit.net"
     #email_from: 
         
